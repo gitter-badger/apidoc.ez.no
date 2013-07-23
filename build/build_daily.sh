@@ -31,7 +31,7 @@ cd ezpublishbuilder
 # this avoids the very verbose output from pake when doing the equivalent thing
 rm -rf build/sami_cache
 
-$PHP pakefile.php generate-apidocs-4X --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/trunk/legacy --docsdir=../../www/trunk/LS --option.docs.include_sources=1 --option.version.alias=Trunk
+$PHP pakefile.php generate-apidocs-LS --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/trunk/legacy --docsdir=../../www/trunk/LS --option.docs.include_sources=1 --option.version.alias=Trunk
 
 rm -rf build/sami_cache
 

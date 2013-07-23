@@ -66,7 +66,7 @@ cd ezpublishbuilder
 # this avoids the very verbose output from pake when doing the equivalent thing
 rm -rf build/sami_cache
 
-$PHP pakefile.php generate-apidocs-4X $CPVER --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/$CPVER/ezpublish_legacy $enterprise \
+$PHP pakefile.php generate-apidocs-LS $CPVER --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/$CPVER/ezpublish_legacy $enterprise \
      --option.docs.doxygen.dir=../$DOCSROOT/doxygen/$CPVER/LS --option.docs.sami.dir=../$DOCSROOT/sami/$CPVER/LS \
      --option.docs.doxygen.zipdir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.zipdir=../$DOCSROOT/sami/$CPVER
      
