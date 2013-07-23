@@ -1,0 +1,10 @@
+build/
+source/
+
+docblox/
+sami/
+phpdocumentor/
+
+pakefile.php
+build.log
+build.log.*
