@@ -27,16 +27,17 @@ Docs can be built two ways:
 
 Folder structure
 ----------------
-|
-|- build
-|  |- ezpublishbuilder
-|  |- source            folder for source code
-|  |- patches
-|  |- <tool>            other tools for the build: doxygen, sami currently, docblox, phpdocumentor before
-|
-|- www
-|  |- downloads         a copy of all GPL versions of eZ is stored here for ease of retrieval
-|  |- community         a copy of an old svn repo, moved here for BC purposes
-|  |- <tool>
-|     |- <branch/release>
-|     |- trunk
+
+    |
+    |- build
+    |  |- ezpublishbuilder
+    |  |- source            folder for source code
+    |  |- patches
+    |  |- <tool>            other tools for the build: doxygen, sami currently, docblox, phpdocumentor before
+    |
+    |- www
+    |  |- downloads         a copy of all GPL versions of eZ is stored here for ease of retrieval
+    |  |- community         a copy of an old svn repo, moved here for BC purposes
+    |  |- <tool>
+    |     |- <branch/release>
+    |     |- trunk
