@@ -2,8 +2,12 @@ ezpublishbuilder/
 source/
 
 docblox/
-sami/
+docblox-*/
+phpdoc-*/
 phpdocumentor/
+phpDocumentor2-*/
+Sami-*/
+sami/
 
 build.log
 build.log.*

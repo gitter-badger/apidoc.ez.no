@@ -9,11 +9,11 @@
 enterprise= 
 
 # parse cli options
-while getopts n option
+while getopts e option
 do
     case $option in
     e)    enterprise=1;;
-    ?)    printf "Usage: %s: [-e] releasename. Use -e for EE releases\n" $0
+    ?)    printf "Usage: %s: releasename [-e]\n    Use -e for EE releases\n" $0
           exit 2;;
     esac
 done
