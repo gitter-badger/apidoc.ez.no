@@ -6,7 +6,7 @@
 
 # options:
 # enterprise version (as opposite to CP)
-enterprise= 
+enterprise=
 
 # parse cli options
 while getopts e option
@@ -23,7 +23,7 @@ shift $(($OPTIND - 1))
 CPVER=$1
 
 #tools
-PHP=/usr/local/php5324/bin/php
+PHP=/usr/local/php-5.4.19/bin/php
 TOOLS="doxygen sami"
 
 #deployment dirs
@@ -69,7 +69,7 @@ rm -rf build/sami_cache
 $PHP pakefile.php generate-apidocs-LS $CPVER --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/$CPVER/ezpublish_legacy $enterprise \
      --option.docs.doxygen.dir=../$DOCSROOT/doxygen/$CPVER/LS --option.docs.sami.dir=../$DOCSROOT/sami/$CPVER/LS \
      --option.docs.doxygen.zipdir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.zipdir=../$DOCSROOT/sami/$CPVER
-     
+
 rm -rf build/sami_cache
 
 $PHP pakefile.php generate-apidocs-NS $CPVER --user-config-file=../options-ezpublish-user.yaml  --sourcedir=../source/$CPVER/vendor/ezsystems/ezpublish-kernel $enterprise \
@@ -88,4 +88,3 @@ do
        [ -d $DOCSROOT/$TOOL/$CPVER/NS_prev ] && mv $DOCSROOT/$TOOL/$CPVER/NS_prev $DOCSROOT/$TOOL/$CPVER/NS
     fi
 done
-

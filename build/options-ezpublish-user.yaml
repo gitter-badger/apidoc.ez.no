@@ -22,7 +22,7 @@ create:
     # docblox has a hard time coping with the New Stack
     docblox_doc: no
     # deprecated: docblox is the new phpdoc 2.0
-    phpdoc_doc: no
+    phpdoc_doc: yes
 
 # Options for generation of documentation
 docs:
@@ -42,30 +42,29 @@ docs:
 tools:
     # full pathname to doc generation tools
     sami: ../sami/sami.php
-    doxygen: /usr/local/bin/doxygen
+    doxygen: /usr/local/doxygen/bin/doxygen
     docblox: ../docblox/bin/docblox.php
-    phpdoc: ../phpdoc/phpdoc
+    phpdoc: ../phpdoc/bin/phpdoc.php
     # in case these are not in your path or you want to use alternative versions
-    php: /usr/local/php5324/bin/php
+    php: /usr/local/php-5.4.19/bin/php
 
 
 # Source repos (only git usable at the moment - see ezextensionbuilder for other options)
 git:
     legacy:
-        url: git://github.com/ezsystems/ezpublish-legacy.git
+        url: https://github.com/ezsystems/ezpublish-legacy.git
 
         # in case source is not in <build>/source/ezpublish/legacy
         local-path: ../source/trunk/legacy
 
     community:
-        url: git://github.com/ezsystems/ezpublish-community.git
+        url: https://github.com/ezsystems/ezpublish-community.git
 
         # in case source is not in <build>/source/ezpublish/community
         local-path: ../source/trunk/community
 
     kernel:
-        url: git://github.com/ezsystems/ezpublish-kernel.git
+        url: https://github.com/ezsystems/ezpublish-kernel.git
 
         # in case source is not in <build>/source/ezpublish/kernel
         local-path: ../source/trunk/kernel
-

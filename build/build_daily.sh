@@ -1,16 +1,18 @@
 #!/bin/sh
 
-### update script for pubsvn: build docs from github sources 
+### update script for pubsvn: build docs from github sources
 ### @author g. giunta
 ### @version $Id$
 
 # modified on 2013.5.2: we only rebuild trunk every nite, using pakefile
 
-PHP=/usr/local/php5324/bin/php
+PHP=/usr/local/php-5.4.19/bin/php
 TOOLS="doxygen sami"
 DOCSROOT=../www/trunk
 
-$PHP pakefile.php update-source
+cd ezpublishbuilder
+$PHP pakefile.php update-source --user-config-file=../options-ezpublish-user.yaml
+cd ..
 
 # back up docs from last build
 # this also avoids the very verbose output from pake when doing the equivalent thing of removing old docs
@@ -50,4 +52,3 @@ do
        [ -d $DOCSROOT/NS/$TOOL/html_prev ] && mv $DOCSROOT/NS/$TOOL/html_prev $DOCSROOT/LS/$TOOL/html
     fi
 done
-
