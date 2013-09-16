@@ -1,7 +1,7 @@
 <?php
 $enterpriseVersions = array( "5.1", "5.0", "4.7", "4.6", "4.5", "4.4" );
-$communityVersions = array( "2013.6", "2013.5", "2013.4", "2013.1", "2012.12" );
-$oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7",/* "3.10.1", "3.9.5", "3.8.10"*/ );
+$communityVersions = array( "2013.7", "2013.6", "2013.5", "2013.4", "2013.1", "2012.12" );
+$oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7" /*, "3.10.1", "3.9.5", "3.8.10"*/ );
 ?>
 <!DOCTYPE html>
 <html>
@@ -243,7 +243,7 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7",/* "3.10.1", "3.9.5", "
                         <?php
                         foreach ( $communityVersions as $version ):
                             echo '<div id="v', str_replace( ".", "", $version ), '" class="tab-pane"><h3>Community Release ', $version, '</h3>';
-			?>
+			            ?>
                             <h4>API Docs</h4>
                             <table class="table">
                                 <thead>
@@ -307,7 +307,7 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7",/* "3.10.1", "3.9.5", "
                         <?php
                         foreach ( $oldVersions as $version ):
                             echo '<div id="v', str_replace( ".", "", $version ), '" class="tab-pane"><h3>Version ', $version, '</h3>';
-			?>
+			            ?>
 
                             <h4>API Docs</h4>
                             <table class="table">
@@ -377,7 +377,7 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7",/* "3.10.1", "3.9.5", "
                     <div class="tile">
                         <h4>eZpedia community wiki</h4>
                         <p>eZpedia is a community-edited repository of eZ Publish information</p>
-                        <a class="btn" href="http://share.ez.no/get-involved">Read eZpedia</a>
+                        <a class="btn" href="http://www.ezpedia.org/">Read eZpedia</a>
                     </div>
                     <div class="tile">
                         <h4>Feeds</h4>
@@ -396,6 +396,8 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7",/* "3.10.1", "3.9.5", "
             <aside class="news span3">
                 <h4>News</h4>
                 <ul>
+
+                    <li><p>2013.9.16 : pubsvn is finally back online after a somewhat-long hiatus caused by unplanned hardware failure. As a bonus, you get docs for CP version 2013.7</p></li>
 
                     <li><p>2013.7.23 : added docs for eZP 5.1, 2013.5 and 2013.6</p></li>
 
@@ -456,19 +458,18 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7",/* "3.10.1", "3.9.5", "
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
-    
-<!-- Piwik -->
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.share.ez.no/" : "http://piwik.share.ez.no/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://piwik.share.ez.no/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Tag -->
+
+<!-- Piwik --> <script type="text/javascript">
+    var _paq = _paq || [];
+    (function(){ var u=(("https:" == document.location.protocol) ? "https://piwik.share.ez.no/" : "http://piwik.share.ez.no/");
+        _paq.push(['setSiteId', 1]);
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
+        s.parentNode.insertBefore(g,s); })();
+</script>
+<!-- End Piwik Code -->
 
 </body>
 </html>
