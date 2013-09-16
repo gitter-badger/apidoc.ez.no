@@ -7,7 +7,8 @@
 # modified on 2013.5.2: we only rebuild trunk every nite, using pakefile
 
 PHP=/usr/local/php-5.4.19/bin/php
-TOOLS="doxygen sami phpdoc"
+#TOOLS="doxygen sami phpdoc"
+TOOLS="doxygen sami"
 DOCSROOT=../www/trunk
 
 cd ezpublishbuilder

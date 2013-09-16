@@ -38,8 +38,15 @@ else
     echo "CP release assumed"
 fi
 
-if [ ! -d source/$CPVER/ezpublish_legacy -o ! -d source/$CPVER/vendor/ezsystems/ezpublish-kernel ]; then
-    echo "Sources not found in source/$CPVER/ezpublish_legacy or source/$CPVER/vendor/ezsystems/ezpublish-kernel"
+case $CPVER in
+    5.0*|2012*)
+        vendor_kernel_dir="ezpublish";;
+    *)
+        vendor_kernel_dir="ezpublish-kernel";;
+esac
+
+if [ ! -d source/$CPVER/ezpublish_legacy -o ! -d source/$CPVER/vendor/ezsystems/$vendor_kernel_dir ]; then
+    echo "Sources not found in source/$CPVER/ezpublish_legacy or source/$CPVER/vendor/ezsystems/$vendor_kernel_dir"
     exit 1
 fi
 
@@ -67,14 +74,14 @@ cd ezpublishbuilder
 rm -rf build/sami_cache
 
 $PHP pakefile.php generate-apidocs-LS $CPVER --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/$CPVER/ezpublish_legacy $enterprise \
-     --option.docs.doxygen.dir=../$DOCSROOT/doxygen/$CPVER/LS --option.docs.sami.dir=../$DOCSROOT/sami/$CPVER/LS \
-     --option.docs.doxygen.zipdir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.zipdir=../$DOCSROOT/sami/$CPVER
+     --option.docs.doxygen.dir=../$DOCSROOT/doxygen/$CPVER/LS --option.docs.sami.dir=../$DOCSROOT/sami/$CPVER/LS --option.docs.phpdoc.dir=../$DOCSROOT/phpdoc/$CPVER/LS \
+     --option.docs.doxygen.zipdir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.zipdir=../$DOCSROOT/sami/$CPVER --option.docs.phpdoc.zipdir=../$DOCSROOT/phpdoc/$CPVER
 
 rm -rf build/sami_cache
 
-$PHP pakefile.php generate-apidocs-NS $CPVER --user-config-file=../options-ezpublish-user.yaml  --sourcedir=../source/$CPVER/vendor/ezsystems/ezpublish-kernel $enterprise \
-     --option.docs.doxygen.dir=../$DOCSROOT/doxygen/$CPVER/NS --option.docs.sami.dir=../$DOCSROOT/sami/$CPVER/NS \
-     --option.docs.doxygen.zipdir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.zipdir=../$DOCSROOT/sami/$CPVER
+$PHP pakefile.php generate-apidocs-NS $CPVER --user-config-file=../options-ezpublish-user.yaml  --sourcedir=../source/$CPVER/vendor/ezsystems/$vendor_kernel_dir $enterprise \
+     --option.docs.doxygen.dir=../$DOCSROOT/doxygen/$CPVER/NS --option.docs.sami.dir=../$DOCSROOT/sami/$CPVER/NS --option.docs.phpdoc.dir=../$DOCSROOT/phpdoc/$CPVER/NS \
+     --option.docs.doxygen.zipdir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.zipdir=../$DOCSROOT/sami/$CPVER --option.docs.phpdoc.zipdir=../$DOCSROOT/phpdoc/$CPVER
 
 cd ..
 
