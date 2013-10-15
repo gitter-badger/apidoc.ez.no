@@ -1,7 +1,7 @@
 <?php
 $enterpriseVersions = array( "5.1", "5.0", "4.7", "4.6", "4.5", "4.4" );
-$communityVersions = array( "2013.7", "2013.6", "2013.5", "2013.4", "2013.1", "2012.12" );
-$oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7" /*, "3.10.1", "3.9.5", "3.8.10"*/ );
+$communityVersions = array( "2013.9", "2013.7", "2013.6", "2013.5", "2013.4", "2013.1", "2012.12" );
+$oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7", "3.10.1", "3.9.5", "3.8.10" );
 ?>
 <!DOCTYPE html>
 <html>
@@ -397,7 +397,7 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7" /*, "3.10.1", "3.9.5", 
                 <h4>News</h4>
                 <ul>
 
-                    <li><p>2013.10.16 : added docs for eZP 2013.9</li>
+                    <li><p>2013.10.16 : added docs for eZP 2013.9, restored as well 3.8, 3.9, 3.10</li>
 
                     <li><p>2013.9.16 : pubsvn is finally back online after a somewhat-long hiatus caused by unplanned hardware failure. As a bonus, you get docs for CP version 2013.7</p></li>
 
