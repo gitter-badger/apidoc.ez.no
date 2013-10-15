@@ -48,8 +48,8 @@ fi
 for TOOL in $TOOLS
 do
     if [ -d $DOCSROOT/$TOOL/$CPVER ]; then
-       [ -d $DOCSROOT/$TOOL/$CPVER_prev ] && rm -rf $DOCSROOT/$TOOL/$CPVER_prev
-       mv $DOCSROOT/$TOOL/$CPVER $DOCSROOT/$TOOL/$CPVER_prev
+       [ -d $DOCSROOT/$TOOL//{$CPVER}__prev ] && rm -rf $DOCSROOT/$TOOL/{$CPVER}_prev
+       mv $DOCSROOT/$TOOL/$CPVER $DOCSROOT/$TOOL//{$CPVER}__prev
     fi
 done
 
@@ -65,7 +65,7 @@ rm -rf build/sami_cache
 $PHP pakefile.php generate-apidocs-4X $CPVER --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/$CPVER $enterprise \
      --option.docs.doxygen.dir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.dir=../$DOCSROOT/sami/$CPVER --option.docs.phpdoc.dir=../$DOCSROOT/phpdoc/$CPVER \
      --option.docs.doxygen.zipdir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.zipdir=../$DOCSROOT/sami/$CPVER --option.docs.phpdoc.zipdir=../$DOCSROOT/phpdoc/$CPVER \
-     --option.docs.name_suffix.4x_stack=
+     --option.docs.name_suffix.4x_stack= --option.ezpublish.name=
      
 cd ..
 
@@ -73,7 +73,7 @@ cd ..
 for TOOL in $TOOLS
 do
     if [ ! -d $DOCSROOT/$TOOL/$CPVER ]; then
-       [ -d $DOCSROOT/$TOOL/$CPVER_prev ] && mv $DOCSROOT/$TOOL/$CPVER_prev $DOCSROOT/$TOOL/$CPVER
+       [ -d $DOCSROOT/$TOOL//{$CPVER}__prev ] && mv $DOCSROOT/$TOOL//{$CPVER}__prev $DOCSROOT/$TOOL/$CPVER
     fi
 done
 
