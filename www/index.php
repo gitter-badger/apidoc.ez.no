@@ -397,6 +397,8 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7" /*, "3.10.1", "3.9.5", 
                 <h4>News</h4>
                 <ul>
 
+                    <li><p>2013.10.16 : added docs for eZP 2013.9</li>
+
                     <li><p>2013.9.16 : pubsvn is finally back online after a somewhat-long hiatus caused by unplanned hardware failure. As a bonus, you get docs for CP version 2013.7</p></li>
 
                     <li><p>2013.7.23 : added docs for eZP 5.1, 2013.5 and 2013.6</p></li>
