@@ -48,8 +48,8 @@ fi
 for TOOL in $TOOLS
 do
     if [ -d $DOCSROOT/$TOOL/$CPVER ]; then
-       [ -d $DOCSROOT/$TOOL//{$CPVER}__prev ] && rm -rf $DOCSROOT/$TOOL/{$CPVER}_prev
-       mv $DOCSROOT/$TOOL/$CPVER $DOCSROOT/$TOOL//{$CPVER}__prev
+       [ -d $DOCSROOT/$TOOL/{$CPVER}__prev ] && rm -rf $DOCSROOT/$TOOL/{$CPVER}_prev
+       mv $DOCSROOT/$TOOL/$CPVER $DOCSROOT/$TOOL/{$CPVER}__prev
     fi
 done
 
@@ -73,7 +73,7 @@ cd ..
 for TOOL in $TOOLS
 do
     if [ ! -d $DOCSROOT/$TOOL/$CPVER ]; then
-       [ -d $DOCSROOT/$TOOL//{$CPVER}__prev ] && mv $DOCSROOT/$TOOL//{$CPVER}__prev $DOCSROOT/$TOOL/$CPVER
+       [ -d $DOCSROOT/$TOOL/{$CPVER}__prev ] && mv $DOCSROOT/$TOOL/{$CPVER}__prev $DOCSROOT/$TOOL/$CPVER
     fi
 done
 
