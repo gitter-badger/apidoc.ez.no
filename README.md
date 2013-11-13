@@ -5,8 +5,8 @@ Requirements
 ------------
 - php
 - doxygen
-- sami
-- a working shell and some related cli tools
+- sami, phpdocumentor2 (installed via composer as part of ezpublishbuilder)
+- a working shell and some related cli tools: git, tar, etc
   (see the documentation of the ezpublishbuilder tool for more details)
 
 How to
@@ -31,9 +31,10 @@ Folder structure
     |
     |- build
     |  |- ezpublishbuilder
+    |     |- ...	
     |  |- source            folder for source code
     |  |- patches
-    |  |- <tool>            other tools for the build: doxygen, sami currently, docblox, phpdocumentor before
+    |  |- <tool>            optionally, other tools for the build: doxygen, docblox, ...
     |
     |- www
     |  |- downloads         a copy of all GPL versions of eZ is stored here for ease of retrieval
