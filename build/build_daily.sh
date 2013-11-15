@@ -34,11 +34,11 @@ cd ezpublishbuilder
 rm -rf build/sami_cache
 
 # note: we have to use 4X here and not LS because repo layout is not the same as release layout
-$PHP ezpublishbuilder generate-apidocs-4X --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/trunk/legacy --docsdir=../../www/trunk2/LS --option.docs.include_sources=1 --option.version.alias=Trunk
+$PHP ezpublishbuilder generate-apidocs-4X --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/trunk/legacy --docsdir=../../www/trunk/LS --option.docs.include_sources=1 --option.version.alias=Trunk
 
 rm -rf build/sami_cache
 
-$PHP ezpublishbuilder generate-apidocs-NS --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/trunk/kernel --docsdir=../../www/trunk2/NS --option.docs.include_sources=1 --option.version.alias=Trunk
+$PHP ezpublishbuilder generate-apidocs-NS --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/trunk/kernel --docsdir=../../www/trunk/NS --option.docs.include_sources=1 --option.version.alias=Trunk
 
 cd ..
 
