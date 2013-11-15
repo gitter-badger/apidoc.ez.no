@@ -21,7 +21,6 @@ create:
     sami_doc: yes
     # docblox has a hard time coping with the New Stack
     docblox_doc: no
-    # deprecated: docblox is the new phpdoc 2.0
     phpdoc_doc: yes
 
 # Options for generation of documentation
@@ -41,10 +40,10 @@ docs:
 
 tools:
     # full pathname to doc generation tools
-    sami: ../sami/sami.php
+    #sami: ../sami/sami.php
     doxygen: /usr/local/doxygen/bin/doxygen
-    docblox: ../docblox/bin/docblox.php
-    phpdoc: ../phpdoc/bin/phpdoc.php
+    #docblox: ../docblox/bin/docblox.php
+    #phpdoc: ../phpdoc/bin/phpdoc.php
     # in case these are not in your path or you want to use alternative versions
     php: /usr/local/php-5.4.19/bin/php
 
@@ -68,3 +67,4 @@ git:
 
         # in case source is not in <build>/source/ezpublish/kernel
         local-path: ../source/trunk/kernel
+

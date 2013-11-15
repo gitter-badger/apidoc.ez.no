@@ -6,7 +6,7 @@
 
 # options:
 # enterprise version (as opposite to CP)
-enterprise=
+enterprise= 
 
 # parse cli options
 while getopts e option
@@ -24,7 +24,7 @@ CPVER=$1
 
 #tools
 PHP=/usr/local/php-5.4.19/bin/php
-TOOLS="doxygen sami"
+TOOLS="doxygen sami phpdoc"
 
 #deployment dirs
 DOCSROOT=../www
@@ -73,13 +73,13 @@ cd ezpublishbuilder
 # this avoids the very verbose output from pake when doing the equivalent thing
 rm -rf build/sami_cache
 
-$PHP pakefile.php generate-apidocs-LS $CPVER --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/$CPVER/ezpublish_legacy $enterprise \
+$PHP ezpublishbuilder generate-apidocs-LS $CPVER --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/$CPVER/ezpublish_legacy $enterprise \
      --option.docs.doxygen.dir=../$DOCSROOT/doxygen/$CPVER/LS --option.docs.sami.dir=../$DOCSROOT/sami/$CPVER/LS --option.docs.phpdoc.dir=../$DOCSROOT/phpdoc/$CPVER/LS \
      --option.docs.doxygen.zipdir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.zipdir=../$DOCSROOT/sami/$CPVER --option.docs.phpdoc.zipdir=../$DOCSROOT/phpdoc/$CPVER
-
+     
 rm -rf build/sami_cache
 
-$PHP pakefile.php generate-apidocs-NS $CPVER --user-config-file=../options-ezpublish-user.yaml  --sourcedir=../source/$CPVER/vendor/ezsystems/$vendor_kernel_dir $enterprise \
+$PHP ezpublishbuilder generate-apidocs-NS $CPVER --user-config-file=../options-ezpublish-user.yaml  --sourcedir=../source/$CPVER/vendor/ezsystems/$vendor_kernel_dir $enterprise \
      --option.docs.doxygen.dir=../$DOCSROOT/doxygen/$CPVER/NS --option.docs.sami.dir=../$DOCSROOT/sami/$CPVER/NS --option.docs.phpdoc.dir=../$DOCSROOT/phpdoc/$CPVER/NS \
      --option.docs.doxygen.zipdir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.zipdir=../$DOCSROOT/sami/$CPVER --option.docs.phpdoc.zipdir=../$DOCSROOT/phpdoc/$CPVER
 
@@ -95,3 +95,4 @@ do
        [ -d $DOCSROOT/$TOOL/$CPVER/NS_prev ] && mv $DOCSROOT/$TOOL/$CPVER/NS_prev $DOCSROOT/$TOOL/$CPVER/NS
     fi
 done
+

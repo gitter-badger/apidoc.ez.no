@@ -62,7 +62,7 @@ cd ezpublishbuilder
 # this avoids the very verbose output from pake when doing the equivalent thing
 rm -rf build/sami_cache
 
-$PHP pakefile.php generate-apidocs-4X $CPVER --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/$CPVER $enterprise \
+$PHP ezpublishbuilder generate-apidocs-4X $CPVER --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/$CPVER $enterprise \
      --option.docs.doxygen.dir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.dir=../$DOCSROOT/sami/$CPVER --option.docs.phpdoc.dir=../$DOCSROOT/phpdoc/$CPVER \
      --option.docs.doxygen.zipdir=../$DOCSROOT/doxygen/$CPVER --option.docs.sami.zipdir=../$DOCSROOT/sami/$CPVER --option.docs.phpdoc.zipdir=../$DOCSROOT/phpdoc/$CPVER \
      --option.docs.name_suffix.4x_stack= --option.ezpublish.name=
@@ -76,4 +76,5 @@ do
        [ -d $DOCSROOT/$TOOL/{$CPVER}__prev ] && mv $DOCSROOT/$TOOL/{$CPVER}__prev $DOCSROOT/$TOOL/$CPVER
     fi
 done
+
 

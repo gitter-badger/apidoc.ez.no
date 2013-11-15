@@ -7,12 +7,11 @@
 # modified on 2013.5.2: we only rebuild trunk every nite, using pakefile
 
 PHP=/usr/local/php-5.4.19/bin/php
-#TOOLS="doxygen sami phpdoc"
-TOOLS="doxygen sami"
+TOOLS="doxygen sami phpdoc"
 DOCSROOT=../www/trunk
 
 cd ezpublishbuilder
-$PHP pakefile.php update-source --user-config-file=../options-ezpublish-user.yaml
+$PHP ezpublishbuilder update-source --user-config-file=../options-ezpublish-user.yaml
 cd ..
 
 # back up docs from last build
@@ -35,11 +34,11 @@ cd ezpublishbuilder
 rm -rf build/sami_cache
 
 # note: we have to use 4X here and not LS because repo layout is not the same as release layout
-$PHP pakefile.php generate-apidocs-4X --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/trunk/legacy --docsdir=../../www/trunk/LS --option.docs.include_sources=1 --option.version.alias=Trunk
+$PHP ezpublishbuilder generate-apidocs-4X --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/trunk/legacy --docsdir=../../www/trunk2/LS --option.docs.include_sources=1 --option.version.alias=Trunk
 
 rm -rf build/sami_cache
 
-$PHP pakefile.php generate-apidocs-NS --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/trunk/kernel --docsdir=../../www/trunk/NS --option.docs.include_sources=1 --option.version.alias=Trunk
+$PHP ezpublishbuilder generate-apidocs-NS --user-config-file=../options-ezpublish-user.yaml --sourcedir=../source/trunk/kernel --docsdir=../../www/trunk2/NS --option.docs.include_sources=1 --option.version.alias=Trunk
 
 cd ..
 
@@ -53,3 +52,4 @@ do
        [ -d $DOCSROOT/NS/$TOOL/html_prev ] && mv $DOCSROOT/NS/$TOOL/html_prev $DOCSROOT/LS/$TOOL/html
     fi
 done
+
