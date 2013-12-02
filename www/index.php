@@ -13,8 +13,13 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7", "3.10.1", "3.9.5", "3.
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body data-spy="scroll" data-target=".navbar">
-    <div class="container">
-
+    <div class="row-fluid">
+        <a href="https://github.com/ezsystems/ezpublish-kernel">
+            <img 
+                style="position: absolute; top: 0; right: 0; border: 0;" 
+                src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" 
+                alt="Fork me on GitHub" />
+        </a>
         <header class="main-header" >
             <a href="/">
                 <img class="main-logo" src="img/logo.png" alt="eZ Publish Community Server logo" />
@@ -30,8 +35,8 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7", "3.10.1", "3.9.5", "3.
             </nav>
         </header>
 
-        <div class="main">
-            <article class="body span8">
+        <div class="container main">
+            <article class="body span12">
                 <section id="release_history">
                     <h3>Release history</h3>
                     <p><a href="/ezpublish_version_history/index.php">This graph</a> details the evolution of eZ Publish over time.</p>
@@ -393,67 +398,7 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7", "3.10.1", "3.9.5", "3.
                 </section>
 
             </article>
-            <aside class="news span3">
-                <h4>News</h4>
-                <ul>
 
-                    <li><p>2013.10.16 : added docs for eZP 2013.9, restored as well 3.8, 3.9, 3.10</li>
-
-                    <li><p>2013.9.16 : pubsvn is finally back online after a somewhat-long hiatus caused by unplanned hardware failure. As a bonus, you get docs for CP version 2013.7</p></li>
-
-                    <li><p>2013.7.23 : added docs for eZP 5.1, 2013.5 and 2013.6</p></li>
-
-                    <li><p>2013.4.29 : added docs for eZP 4.7, 5.0, 2012.12, 2013.1 and 2013.4; fixed links to Github</p></li>
-
-                    <li><p>2013.1.14 : upgraded doxygen and piwik; added doc for latest CP versions; added more links to sources on github</p></li>
-
-                    <li><p>2012.07.26 : added documentation for the CP versions; a bit of styling love...</p></li>
-
-                    <li><p>2012.06.13 : updated doxygen and piwik</p></li>
-
-                    <li><p>2012.01.23 : updated doxygen to 1.7.6.1, docblox 1.8.1 and phpdoc 1.4.4; added documentation for versions 4.6 and 4.5; changed documentation for all branches (except trunk) - it is now generated from release versions, not from git branches anymore</p></li>
-
-                    <li><p>2011.08.28 : updated doxygen to 1.5.1; added documentation generated with the docblox tool</p></li>
-
-                    <li><p>2011.03.29 : moved to a new server; disabled access stats, viewvc, websvn, statsvn and SVN access; added phpdoc-generated docs; updated doxygen to 1.7.4; added some directories to those scanned for php classes</p></li>
-
-                    <li><p>2010.10.12 : added the 4.4 stable branch; reactivated doc generation and source tarball creation from github sources for all branches starting from 4.0</p></li>
-
-                    <li><p>2010.04.13 : added the 4.3 stable branch;<br/>updated websvn, viewvc, statsvn and doxygen;<br/>added <a href="/piwik">Piwik stats</a></p></li>
-
-                    <li><p>2009.09.30 : added the 4.2 stable branch</p></li>
-
-                    <li><p>2009.09.22 : updated viewvc to version 1.1.2</p></li>
-
-                    <li><p>2009.05.20 : updated php to version 5 to fix problems with websvn on some php files; enabled http compression</p></li>
-
-                    <li><p>2009.05.18 : access statistics are back for everybody; updated viewvc to version 1.1.0, websvn to version 2.2.1</p></li>
-
-                    <li><p>2009.05.07 : added a websvn view to the "extensions" svn repository and changed its servername from zev.ez.no to svn.ez.no; Added statsvn-generated stats to all eZP branches</p></li>
-
-                    <li><p>2009.05.06 : The api docs generated via Doxygen are now available for download as a zip files</p></li>
-
-                    <li><p>2009.04.17 : The tools installed on the community server have been upgraded to the latest available version (viewvc, doxygen,
-                        statsvn, websvn2). Websvn 1 and ViewCVS have been removed as old and unmaintained. Added link to 4.1 branch and corrected the generation scripts</p></li>
-
-                    <li><p>2008.03.31 : The community repository has been made read-only on the 31st of March 2008 and will rest in peace, in favor of <a href="http://projects.ez.no">eZ Projects</a>.
-                        We recommend everyone to move their extensions to eZ Projects as soon as possible. For more information, please read
-                        <a href="http://blog.coomanskristof.be/2008/02/27/pubsvn-community-subversion-repository-closing-31st-of-march/">Kristof's blog article regarding this topic</a>.
-                    </p></li>
-
-                    <li><p>Some extensions have been made read-only in the community repository, because they are now using the project spaces at
-                        <a href="http://projects.ez.no">eZ projects</a> instead. eZpedia offers
-                        <a href="http://ezpedia.org/wiki/en/ez/pubsvn_commit_access_restrictions">a list of these read-only paths in the community
-                            repository</a>. We recommend everyone to move their extensions to eZ projects. If you do so then send a list with the related
-                        paths in the community repository to <a href="mailto:kristof.coomans@telenet.be">Kristof</a> so he can make them read-only.
-                    </p></li>
-
-                    <!--<h2 id="nextgen_php5">The nextgen_php5 repository is deprecated</h2>-->
-                    <li><p>The nextgen_php5 repository is deprecated. It contains a PHP 5 port of eZ Publish 3.9. It was started by the eZ Publish Community. eZ Systems has adopted the port and based on the initial work done by the community, they were able to release eZ Publish 4 in December 2007. It is recommended that you use the official version from eZ Systems, because no further updates will be done on the community port.</p></li>
-
-                </ul>
-
-            </aside>
         </div>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
