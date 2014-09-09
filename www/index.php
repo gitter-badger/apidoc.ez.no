@@ -392,8 +392,8 @@ $oldVersions = array( "4.3.0", "4.2.0", "4.1.4", "4.0.7", "3.10.1", "3.9.5", "3.
                     <div class="tile">
                         <h4>Documentation</h4>
                         <p>Official eZ Publish documentation for the current release can be found online.</p>
-                        <a class="btn" href="http://doc.ez.no/">Legacy Docs</a><br />
-                        <a class="btn" href="http://confluence.ez.no/">5.x Docs</a>
+                        <a class="btn" href="http://doc.ez.no/eZ-Publish/">Legacy Docs</a><br />
+                        <a class="btn" href="http://doc.ez.no/">5.x Docs</a>
                     </div>
                 </section>
 
